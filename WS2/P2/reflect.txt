@@ -1,0 +1,22 @@
+/*///////////////////////////////////////////////////////////////////////////
+Name: Reginald Edward
+Email: redward7@myseneca.ca
+Student Number: 149047227
+Date: May 25, 2023
+Section: OOP244 NAA
+
+I have done all the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments.
+///////////////////////////////////////////////////////////////////////////*/
+
+For workshop 2, I have learned and continued to learn pointers and references, what dynamic memory is, and overloading 
+functions. With this workshop, I was able to understand how to allocate memory for an array that we do not know the size of.
+For example, in workshop 2 part 1, we did not know how long the names of the employees would be. Instead of allocating
+a fixed memory for all of them, which can make the memory go to waste, we dynamically allocated the memory. Since 
+workshop 2 part 1 came with step by step instructions on how to do the code, I was able to take a longer time understanding
+why I did what I did. Another concept I leared from workshop 2 are references. We can pass by reference and we can pass by address. If we want to manipulate the data, pass by reference is often used. Lastly, I learned overloading functions which
+basically means using the same function name with different parameters. If I had three functions that want to mulitply
+but one function multiplies only 2 numbers and the other multiples 3 numbers, I would use 2 functions called multiply.
+One will have two parameters, and the other one will have three parameters. When I need to call them I would call them
+based off how many parameters I send through them. For workshop 2 we used the read functions multiple times and the 
+parameters they received are out functions. Out functions means that the values passed through them can be changed. In parameters on the other hand are parameters where the values do not change for rest of the code. Examples of in parameters  would be a pass by value or CONST where the value is a copy and is only for that function alone or the values cannot be changed. THe display function with CONST parameter would be an example of an in functions since the values cannot be changed.
