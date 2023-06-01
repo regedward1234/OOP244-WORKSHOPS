@@ -1,0 +1,17 @@
+/*///////////////////////////////////////////////////////////////////////////
+Name: Reginald Edward
+Email: redward7@myseneca.ca
+Student Number: 149047227
+Date: May 31, 2023
+Section: OOP244 NAA
+
+I have done all the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments.
+///////////////////////////////////////////////////////////////////////////*/
+For workshop 3, I built on things I learned from previous workshops' like allocating and deallocating dynamic memory. 
+Something new I had to implement in this workshop is a constructor for the Food class in part 2. Although I could have used the Empty function to set everything to 0, I created a constructor to try and see how it works. Another thing I learned 
+while doing this workshop is more about cout and how to format it. Lastly, the biggest thing I learned from this workshop
+is about classes. I learned that a class is private by default and that we can use "public:" to make member functions 
+be accessible to client code. The data members can be accessed by public and private functions. The member functions
+help in getting values from client code into the class by assigning it to the private data members. An important thing I 
+woiuld need to keep in mind for future workshops is initializing the data members to an empty state, as they can create bugs later on.  

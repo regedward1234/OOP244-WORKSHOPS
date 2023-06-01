@@ -10,18 +10,35 @@ professor provided to complete my workshops and assignments.
 ///////////////////////////////////////////////////////////////////////////*/
 #ifndef SDDS_FOOD_H_
 #define SDDS_FOOD_H_
-#define TAX_RATE 0.13
 namespace sdds {
     class Food {
-        char foodName[311];
+        char foodName[31];
         int calorieNumber;
         int consumptionTime;
+        
+        //Set name to foodName using input from client code and ensuring it is null terminated
         void setName(const char* name);
     public:
+        
+        //Constructor for Food to set all the data members to 0
+        Food();
+        
+        //Destructor for food 
+        ~Food();
+
+        //Set all the data members to empty state
         void setEmpty();
+
+        //Set incoming parameters to each of the data members
         void set(const char* name, int calories, int consumptionTotal);
+
+        //Display the table
         void display()const;
+
+        //Check if incoming parameters are meet requirements
         bool isValid()const;
+
+        //Calculate total calories of all the foods
         int calorie()const;
        
     };
