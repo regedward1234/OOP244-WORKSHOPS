@@ -10,8 +10,7 @@ professor provided to complete my workshops and assignments.
 ///////////////////////////////////////////////////////////////////////////*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <string.h>
-//#include "cstring.h"
+#include "cstring.h"
 #include "Item.h"
 
 using namespace std;
@@ -19,7 +18,9 @@ namespace sdds {
 
 	//Sets the itemName member Cstring variable to a the Cstring in the name argument up to 20 characters.
 	void Item::setName(const char* name) {
-		strncpy(m_itemName, name, 20);
+		strnCpy(m_itemName, name, 20);
+		m_itemName[20] = '\0';
+
 	}
 
 	//Sets the Item to a recognizable safe Empty State.
@@ -62,7 +63,7 @@ namespace sdds {
 	//Returns true if the Item is not set to the empty state
 	bool Item::isValid()const {
 		bool tempBool;
-		if (m_itemName == nullptr && m_price == 0.0) {
+		if (m_itemName[0] == '\0' || m_price == 0.0) {
 			tempBool = false;
 		}
 		else {
@@ -70,12 +71,12 @@ namespace sdds {
 		}
 		return tempBool;
 	}
-		
-	
-	
+
+
+
 	//Prints an item
 	void Item::display()const {
-		if (isValid()==true) {
+		if (isValid() == true) {
 			cout << "| ";
 			cout.width(20);
 			cout.fill('.');
@@ -87,7 +88,7 @@ namespace sdds {
 			cout.fill(' ');
 			cout.precision(2);
 			cout.setf(ios::fixed);
-			cout << m_price;	
+			cout << m_price;
 			cout.unsetf(ios::fixed);
 			cout << " | ";
 			if (m_taxed) {

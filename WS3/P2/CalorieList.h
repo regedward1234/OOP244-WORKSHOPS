@@ -23,8 +23,8 @@ namespace sdds {
         void setEmpty();
         bool isValid()const;
     public:
-        CalorieList();
-        ~CalorieList();
+        //CalorieList();
+       // ~CalorieList();
         void init(int noOfItems);
         bool add(const char* item_name, int calories, int when);
         void display()const;

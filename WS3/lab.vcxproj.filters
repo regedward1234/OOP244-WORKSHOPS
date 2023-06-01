@@ -24,7 +24,7 @@
     <ClCompile Include="Bill.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="billTester.cpp">
+    <ClCompile Include="billTester_prof.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

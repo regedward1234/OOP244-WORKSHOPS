@@ -17,7 +17,7 @@ professor provided to complete my workshops and assignments.
 using namespace std;
 namespace sdds {
 
-	CalorieList::CalorieList() {
+	/*CalorieList::CalorieList() {
 		foodName = nullptr;
 		noOfItems = 0;
 
@@ -25,12 +25,21 @@ namespace sdds {
 
 	CalorieList::~CalorieList() {
 		delete[] foodName;
+	}*/
+
+	void CalorieList::setEmpty() {
+		foodName = nullptr;
 	}
 
 	void CalorieList::init(int size) {
-		foodName = new Food[size];
-		noOfItems = size;
-		ItemsAdded = 0;
+		if (size <= 0) {
+			setEmpty();
+		}
+		else {
+			foodName = new Food[size];
+			noOfItems = size;
+			ItemsAdded = 0;
+		}
 	}
 
 	bool CalorieList::add(const char* item_name, int calories, int when) {
@@ -49,7 +58,7 @@ namespace sdds {
 	bool CalorieList::isValid()const {
 		int i;
 		if (foodName != nullptr) {
-			for (int i = 0; i < ItemsAdded; i++) {
+			for (int i = 0; i < noOfItems; i++) {
 				if (!foodName[i].isValid()) {
 					return false;
 				}
@@ -71,23 +80,23 @@ namespace sdds {
 
 
 	void CalorieList::Title()const {
-			cout << "+--------------------------------+------+------------+" << endl;
-			if (CalorieList::isValid() == true) {
-				cout << "| ";
-				cout.width(48);
-				cout.setf(ios::left);
-				cout << " Daily Calorie Consumption                        ";
-				cout.unsetf(ios::left);
-				cout << " |" << endl;
-			}
-			else {
-				cout << "| Invalid Calorie Consumption List                   |" << endl;
-			}
+		cout << "+----------------------------------------------------+" << endl;
+		if (CalorieList::isValid() == true) {
+			cout << "| ";
+			cout.width(48);
+			cout.setf(ios::left);
+			cout << " Daily Calorie Consumption                        ";
+			cout.unsetf(ios::left);
+			cout << " |" << endl;
+		}
+		else {
+			cout << "| Invalid Calorie Consumption List                   |" << endl;
+		}
 
-			cout << "+--------------------------------+------+------------+" << endl;
-			cout << "| Food Name                      | Cals | When       |" << endl;
-			cout << "+--------------------------------+------+------------+" << endl;
-		
+		cout << "+--------------------------------+------+------------+" << endl;
+		cout << "| Food Name                      | Cals | When       |" << endl;
+		cout << "+--------------------------------+------+------------+" << endl;
+
 	}
 
 	void CalorieList::footer()const {
@@ -100,19 +109,19 @@ namespace sdds {
 			cout.setf(ios::fixed);
 			cout << totalCalories();
 			cout.unsetf(ios::fixed);
-		    cout <<" |            |" << endl;
+			cout << " |            |" << endl;
 
 		}
 		else {
 			cout << "|    Invalid Calorie Consumption List                |" << endl;
 		}
 
-		cout << "+--------------------------------+------+------------+"  << endl;
+		cout << "+----------------------------------------------------+" << endl;
 	}
 	void CalorieList::display()const {
 		int i;
 		Title();
-		for (i = 0; i < ItemsAdded; i++) {
+		for (i = 0; i < noOfItems; i++) {
 			foodName[i].display();
 		}
 
@@ -124,5 +133,4 @@ namespace sdds {
 		delete[] foodName;
 		foodName = nullptr;
 	}
-	}
-
+}

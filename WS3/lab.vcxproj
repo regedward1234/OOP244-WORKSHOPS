@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bill.cpp" />
-    <ClCompile Include="billTester.cpp" />
+    <ClCompile Include="billTester_prof.cpp" />
     <ClCompile Include="cstring.cpp" />
     <ClCompile Include="Item.cpp" />
   </ItemGroup>

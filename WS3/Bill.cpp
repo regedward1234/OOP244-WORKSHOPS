@@ -10,8 +10,7 @@ professor provided to complete my workshops and assignments.
 ///////////////////////////////////////////////////////////////////////////*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <string.h>
-//#include "cstring.h"
+#include "cstring.h"
 #include "Bill.h"
 
 using namespace std;
@@ -29,11 +28,11 @@ namespace sdds {
 		int i, keepGoing = 1;
 
 		if (m_title[0] != '\0' && m_items != nullptr) {
-			for (i = 0; i < m_itemsAdded && keepGoing; i++) {
+			for (i = 0; i < m_noOfItems && keepGoing; i++) {
 				if (!m_items[i].isValid()) {
 					tempBool = false;
-					keepGoing=0;	
-								
+					keepGoing = 0;
+
 				}
 			}
 		}
@@ -42,7 +41,8 @@ namespace sdds {
 		}
 		return tempBool;
 	}
-		
+
+
 
 	//Adds all the taxes of the items using a loop and returns the sum.
 	double Bill::totalTax()const {
@@ -60,12 +60,12 @@ namespace sdds {
 		int i;
 		double totalPrice = 0.0;
 
-		for (i = 0; i < m_itemsAdded; i++) {
+		for (i = 0; i < m_noOfItems; i++) {
 			totalPrice += m_items[i].price();
 		}
 		return totalPrice;
 	}
-	
+
 	//Prints the title
 	void Bill::Title()const {
 		cout << "+--------------------------------------+" << endl;
@@ -86,32 +86,32 @@ namespace sdds {
 		cout << "+----------------------+---------+-----+" << endl;
 	}
 
-	
+
 	//Prints the footer
 	void Bill::footer()const {
 		cout << "+----------------------+---------+-----+" << endl;
 
-		if (Bill::isValid() == true) {
+		if (isValid() == true) {
 			cout << "|                Total Tax: ";
 			cout.width(10);
-			cout.setf(ios::right);
-			cout.precision(3);
+			cout.setf(ios::fixed);
+			cout.precision(2);
 			cout << totalTax();
-			cout.unsetf(ios::right);
+			cout.unsetf(ios::fixed);
 			cout << " |" << endl;
 			cout << "|              Total Price: ";
 			cout.width(10);
-			cout.setf(ios::right);
-			cout.precision(4);
+			cout.setf(ios::fixed);
+			cout.precision(2);
 			cout << totalPrice();
-			cout.unsetf(ios::right);
+			cout.unsetf(ios::fixed);
 			cout << " |" << endl;
 			cout << "|          Total After Tax: ";
 			cout.width(10);
-			cout.setf(ios::right);
-			cout.precision(4);
+			cout.setf(ios::fixed);
+			cout.precision(2);
 			cout << totalTax() + totalPrice();
-			cout.unsetf(ios::right);
+			cout.unsetf(ios::fixed);
 			cout << " |" << endl;
 
 		}
@@ -123,7 +123,7 @@ namespace sdds {
 	}
 
 
-	
+
 	//Set to empty state if not valid  or allocate memory
 	void Bill::init(const char* title, int noOfItems) {
 		int i;
@@ -132,7 +132,7 @@ namespace sdds {
 			setEmpty();
 		}
 		else {
-			strncpy(m_title, title, 36);
+			strnCpy(m_title, title, 36);
 			m_title[36] = '\0';
 			m_noOfItems = noOfItems;
 			m_itemsAdded = 0;
@@ -144,8 +144,8 @@ namespace sdds {
 		}
 	}
 
-	/*If the number of added Items (m_itemsAdded) is less than the length of the m_items array, 
-	this function will set the next available subject to the incoming argument values. Then it 
+	/*If the number of added Items (m_itemsAdded) is less than the length of the m_items array,
+	this function will set the next available subject to the incoming argument values. Then it
 	will add one to the m_itemsAdded and return true*/
 	bool Bill::add(const char* item_name, double price, bool taxed) {
 		bool tempBool;
@@ -170,7 +170,7 @@ namespace sdds {
 
 		Title();
 
-		for (i = 0; i < m_itemsAdded; i++) {
+		for (i = 0; i < m_noOfItems; i++) {
 			m_items[i].display();
 		}
 
@@ -184,4 +184,4 @@ namespace sdds {
 		m_items = nullptr;
 	}
 
-}
+}	
