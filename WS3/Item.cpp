@@ -84,10 +84,11 @@ namespace sdds {
 			cout << m_itemName;
 			cout.unsetf(ios::left);
 			cout << " | ";
+			cout.setf(ios::fixed);
 			cout.width(7);
 			cout.fill(' ');
 			cout.precision(2);
-			cout.setf(ios::fixed);
+			
 			cout << m_price;
 			cout.unsetf(ios::fixed);
 			cout << " | ";
