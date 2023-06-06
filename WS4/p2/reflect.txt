@@ -1,0 +1,11 @@
+/*///////////////////////////////////////////////////////////////////////////
+Name: Reginald Edward
+Email: redward7@myseneca.ca
+Student Number: 149047227
+Date: June 06, 2023
+Section: OOP244 NAA
+
+I have done all the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments.
+///////////////////////////////////////////////////////////////////////////*/
+For this workshop we continued working with classes, encapuslation, and constructors, as well as destructors. For this workshop I continued to use public and private keywords to follow the rules of encapsulation. I ensured that the objects were properly initialized to an empty state. I also made sure that when I used the "new" keyword for allocating dynamic memory, I followed it with a "delete" keyword to deallocate dynamic memory. Moreover, for this workshop I incorported the "this" keyword. It was interesting to know that the "this" keyword can be used to get the address of or the values of the current object passed through the function. Another thing I learned in this workshop is that the standard ostream can be used as a return type when printing and displaying to the screen. One issue I had with this workshop is in part 2 where I would need to print out the labels, it was hard to tell how the output was exactly supposed to be. There were many trial and errors before I was able to figure out a way. However, I feel there may be a cleaner way of doing it. Overall, the workshop continued to teach me the importance of encapsulation and how to work with classes and members functions. It taught me the "this" keyword, overloading constructors (which is like function overloading) and destructors.
