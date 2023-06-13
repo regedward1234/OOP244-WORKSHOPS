@@ -1,0 +1,11 @@
+/*///////////////////////////////////////////////////////////////////////////
+Name: Reginald Edward
+Email: redward7@myseneca.ca
+Student Number: 149047227
+Date: June 11, 2023
+Section: OOP244 NAA
+
+I have done all the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments.
+///////////////////////////////////////////////////////////////////////////*/
+This workshop was very challenging because of the introduction of overloaded operators. This being my first year ever coding, I could not grasp the idea that operators can mean and do different things than what we see them do day to day. Morever, I did not know how much control we had when it came to changing the definitions of these operators. Initally, for workshop1 part 1, I focused on the step by step guide to code each function including the overloaded operators. I did not think to use those overloaded operators until I finished coding the helper functions. After coding the helper function, I realized that there are other functions where I can use the overloaded operators. I went through each function and changed what can be changed so they utilized the operator functions. I did not want to use the overloaded operators at the beginning and just wanted the code to work but after I completed the program I went back and tested ways on how to use overloaded operators instead. The result was that the code became more cleaner and simpler. Another thing I learned from this workshop is how the "this" keyword is very useful when it comes to referencing the current object. It made it easier to code instead of calling each member function in the object. This workshop was a little confusing when it came to the helper functions. I learned about the friend keyword so that the helper function has access to the class members but I am not 100% sure it had any effect in this lab or whether it was needed.
