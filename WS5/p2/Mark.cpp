@@ -14,7 +14,7 @@ professor provided to complete my workshops and assignments.
 
 using namespace std;
 namespace sdds {
-	
+
 	//Set to empty state
 	void Mark::setEmpty() {
 		mark = -1;
@@ -31,7 +31,7 @@ namespace sdds {
 
 		if (markNum >= 0 && markNum <= 100) {
 			mark = markNum;
-		}		
+		}
 	}
 
 	//Overload bool operator to check if marks is valid, meets requirements
@@ -46,7 +46,7 @@ namespace sdds {
 		}
 		return tempBool;
 	}
-	
+
 	//Overloaded int operator that returns marks if valid or 0 if invalid
 	Mark:: operator int() const {
 		int tempMark;
@@ -72,20 +72,22 @@ namespace sdds {
 	}
 
 	//Mark is set to incoming argument if mark is valid
-	Mark& Mark:: operator=(int num) { 
+	Mark& Mark:: operator=(int num) {
 		mark = num;
 
 		//Using overloaded bool operator to check if mark is invalid
 		if (!*this)
 		{
-		
+			setEmpty();
 		}
 		return *this;
 	}
 
 	//Set the mark to GPA double value using overloaded operator
 	Mark:: operator double() const {
-		double tempdouble;
+
+		//Initializing the temp variable
+		double tempdouble = -1.0;
 
 		//Use overloaded bool operator to set value to 0 if mark is invalid 
 		if (!*this) {
@@ -120,7 +122,9 @@ namespace sdds {
 
 	//Set the mark to Grade char value using overloaded operators
 	Mark:: operator char() const {
-		char tempChar;
+
+		//Initiazling char to null terminator
+		char tempChar = '\0';
 
 		//Use overloaded bool operator to set grade to 'X' if mark is invalid 
 		if (!*this) {
@@ -155,7 +159,7 @@ namespace sdds {
 
 	//helper += operator that adds mark to an integer using the overloaded int operator
 	int operator+=(int& value, const Mark& marks) {
-		
+
 		if (marks.mark >= 0 && marks.mark <= 100) {
 			value += (int)marks;
 		}
