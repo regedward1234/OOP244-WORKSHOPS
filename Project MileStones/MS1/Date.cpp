@@ -90,7 +90,7 @@ namespace sdds {
 		return RO.read(is);
 	}
 
-	istream& Date::read(std::istream& is = std::cin) {
+	istream& Date::read(std::istream& is) {
 
 		// clear error code by setting it to NO_ERROR which is a global const
 		m_ErrorCode = NO_ERROR;
@@ -124,7 +124,7 @@ namespace sdds {
 		return is;
 	}
 
-	ostream& Date::write(std::ostream& os = std::cout)const {
+	ostream& Date::write(std::ostream& os)const {
 		// use bad function to see if in bad state and if it is use datestatus function to print datestatus
 		if (bad()) {
 			os << dateStatus();
@@ -148,11 +148,11 @@ namespace sdds {
 		bool temp;
 
 		if (daysSince0001_1_1() == anotherDate.daysSince0001_1_1()) {
-			temp == true;
+			temp = true;
 		}
 
 		else {
-			temp == false;
+			temp = false;
 		}
 
 		return temp;
@@ -162,11 +162,11 @@ namespace sdds {
 		bool temp;
 
 		if (daysSince0001_1_1() != anotherDate.daysSince0001_1_1()) {
-			temp == true;
+			temp = true;
 		}
 
 		else {
-			temp == false;
+			temp = false;
 		}
 
 		return temp;
@@ -176,11 +176,11 @@ namespace sdds {
 		bool temp;
 
 		if (daysSince0001_1_1() >= anotherDate.daysSince0001_1_1()) {
-			temp == true;
+			temp = true;
 		}
 
 		else {
-			temp == false;
+			temp = false;
 		}
 
 		return temp;
@@ -190,11 +190,11 @@ namespace sdds {
 		bool temp;
 
 		if (daysSince0001_1_1() <= anotherDate.daysSince0001_1_1()) {
-			temp == true;
+			temp = true;
 		}
 
 		else {
-			temp == false;
+			temp = false;
 		}
 
 		return temp;
@@ -204,11 +204,11 @@ namespace sdds {
 		bool temp;
 
 		if (daysSince0001_1_1() < anotherDate.daysSince0001_1_1()) {
-			temp == true;
+			temp = true;
 		}
 
 		else {
-			temp == false;
+			temp = false;
 		}
 
 		return temp;
@@ -218,13 +218,35 @@ namespace sdds {
 		bool temp;
 
 		if (daysSince0001_1_1() > anotherDate.daysSince0001_1_1()) {
-			temp == true;
+			temp = true;
 		}
 
 		else {
-			temp == false;
+			temp = false;
 		}
 
 		return temp;
 	}
+
+	int Date::operator-(const Date& anotherDate) const {
+		int temp;
+
+		temp = daysSince0001_1_1() - anotherDate.daysSince0001_1_1();
+		return temp;
+	}
+
+	Date::operator bool() const {
+		bool temp;
+
+		if (bad()) {
+			temp = false;
+		}
+
+		else {
+			temp = true;
+		}
+
+		return temp;
+	}
+
 }
