@@ -105,21 +105,17 @@ namespace sdds {
 		is.ignore();
 		// read day
 		is >> m_day;
-		// ignore single character
-		is.ignore();
-
+		
 		if (is.fail()) {
 			m_ErrorCode = CIN_FAILED;
 			is.clear();
 		}
-
 		else {
 			// validate the values enetered using validate function
 			validate();
 		}
 
-		// flushing keyboard function in utils. Flushes the keyboard
-		flushKeyboardBuffer();
+		is.ignore(1000, '\n');
 
 		return is;
 	}

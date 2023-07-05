@@ -19,9 +19,6 @@ that my professor provided to complete my workshops and assignments.
 #include "Utils.h"
 #include <iostream>
 namespace sdds {
-    void flushKeyboardBuffer() {
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      
-    }
+   
 
 }
