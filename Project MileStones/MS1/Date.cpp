@@ -125,9 +125,11 @@ namespace sdds {
 	}
 
 	ostream& Date::write(std::ostream& os = std::cout)const {
+		// use bad function to see if in bad state and if it is use datestatus function to print datestatus
 		if (bad()) {
-			dateStatus();
+			os << dateStatus();
 		}
+		// if not in bad state print out the date in following format
 		else {
 			os << m_year;
 			os << "/";
@@ -142,4 +144,87 @@ namespace sdds {
 		return os;
 	}
 
+	bool Date::operator==(const Date& anotherDate) const {
+		bool temp;
+
+		if (daysSince0001_1_1() == anotherDate.daysSince0001_1_1()) {
+			temp == true;
+		}
+
+		else {
+			temp == false;
+		}
+
+		return temp;
+	}
+
+	bool Date::operator!=(const Date& anotherDate) const {
+		bool temp;
+
+		if (daysSince0001_1_1() != anotherDate.daysSince0001_1_1()) {
+			temp == true;
+		}
+
+		else {
+			temp == false;
+		}
+
+		return temp;
+	}
+
+	bool Date::operator>=(const Date& anotherDate) const {
+		bool temp;
+
+		if (daysSince0001_1_1() >= anotherDate.daysSince0001_1_1()) {
+			temp == true;
+		}
+
+		else {
+			temp == false;
+		}
+
+		return temp;
+	}
+
+	bool Date::operator<=(const Date& anotherDate) const {
+		bool temp;
+
+		if (daysSince0001_1_1() <= anotherDate.daysSince0001_1_1()) {
+			temp == true;
+		}
+
+		else {
+			temp == false;
+		}
+
+		return temp;
+	}
+
+	bool Date::operator<(const Date& anotherDate) const {
+		bool temp;
+
+		if (daysSince0001_1_1() < anotherDate.daysSince0001_1_1()) {
+			temp == true;
+		}
+
+		else {
+			temp == false;
+		}
+
+		return temp;
+	}
+
+	bool Date::operator>(const Date& anotherDate) const {
+		bool temp;
+
+		if (daysSince0001_1_1() > anotherDate.daysSince0001_1_1()) {
+			temp == true;
+		}
+
+		else {
+			temp == false;
+		}
+
+		return temp;
+	}
 }
