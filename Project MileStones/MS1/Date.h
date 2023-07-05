@@ -49,9 +49,13 @@ namespace sdds {
       const char* dateStatus()const;  // returns a string corresponding the current status of the date
       int currentYear()const;         // returns the m_CUR_YEAR value;
 
+      std::istream& read(std::istream& is = std::cin); // reads a date from the console in the following format. If the date is not correct it outputs an error
+      std::ostream& write(std::ostream& os = std::cout)const; // write date in the following format
       
    };
    std::ostream& operator<<(std::ostream& os, const Date& RO);
    std::istream& operator>>(std::istream& is, Date& RO);
+
+ 
 }
 #endif
