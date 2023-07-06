@@ -34,7 +34,7 @@ namespace sdds {
 		~MenuItem();
 		operator bool() const; // returns true if it is not empty
 		operator const char* () const; // return the address of the contect Cstring
-		std::ostream& write(std::ostream& os = std::cout)const; //display the menu items
+		std::ostream& display()const; // display the menucontent
 	};
 
 	class Menu {
@@ -42,13 +42,14 @@ namespace sdds {
 		MenuItem* menuTitle;
 		MenuItem* menuItems[MAX_MENU_ITEMS];
 		int itemCount;
-		Menu(const Menu& title); // delete copy constructor so Menu object cannot be copied
+	public:
+		Menu(const Menu& title) = delete; // delete copy constructor so Menu object cannot be copied
 		Menu& operator=(const Menu& content) = delete; // delete copy assignment so Menuobject cannot be copied
 		Menu(); // no argument constructor 
 		Menu(const char* title); // Argument constructor that passes a menu title
 		~Menu(); // destructor to delete pointer
 		void displayTitle(); // display title of the menu
-		std::ostream& write(std::ostream& os = std::cout)const; // display entire menu on ostream
+		std::ostream& display()const; // display entire menu on ostream
 		unsigned int run(); // displays the menu and gets user selection
 		unsigned int operator~(); // overloaded ~ to do what run function does 
 		Menu& operator<<(const char* menuitemConent); // overloaded << to add MenuItem to the Menu

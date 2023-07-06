@@ -19,6 +19,7 @@ that my professor provided to complete my workshops and assignments.
 #define SDDS_UTILS_H__
 
 namespace sdds {
-   
+    int strLen(const char* s);
+    void strCpy(char* des, const char* src);
 }
 #endif // SDDS_UTILS_H__
