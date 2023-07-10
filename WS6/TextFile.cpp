@@ -216,14 +216,8 @@ namespace sdds {
 				checkPrintedLines++;
 
 				if (checkPrintedLines == m_pageSize) {	
-					//char dummy;
 					ostr << "Hit ENTER to continue...";
-					//ostr.flush();
-					getchar();
-					//cin.clear();					
 					cin.ignore(1000, '\n');
-					//cin.peek();
-					//cin.get(dummy);
 					checkPrintedLines = 0;
 				}
 			}
@@ -235,7 +229,7 @@ namespace sdds {
 		// read file name 
 		string file;
 		istr >> file;
-
+		istr.ignore(10000, '\n');
 
 		setFilename(file.c_str());
 		setNoOfLines();

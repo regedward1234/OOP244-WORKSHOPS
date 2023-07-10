@@ -28,7 +28,11 @@
     <ClCompile Include="w6p1_tester.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="echoes.txt" />
+    <Text Include="echoesOriginal.txt" />
     <Text Include="ExecutionOutputSample.txt" />
+    <Text Include="seamus.txt" />
+    <Text Include="seamusOriginal.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

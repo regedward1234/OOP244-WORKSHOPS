@@ -37,5 +37,17 @@
     <Text Include="ExecutionOutputSample.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="echoes.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="echoesOriginal.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="seamus.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="seamusOriginal.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
