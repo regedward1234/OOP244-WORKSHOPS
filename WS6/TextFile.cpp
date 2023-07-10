@@ -5,8 +5,9 @@ Student Number: 149047227
 Date: July 03, 2023
 Section: OOP244 NAA
 
-I have done all the coding by myself and only copied the code that my
-professor provided to complete my workshops and assignments.
+I have done most of the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments. I got help from
+professor Fardad in fixing the error in the view and getFile function. 
 ///////////////////////////////////////////////////////////////////////////*/
 #include <iostream>
 #include <fstream>
