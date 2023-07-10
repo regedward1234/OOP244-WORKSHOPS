@@ -1,0 +1,22 @@
+/*///////////////////////////////////////////////////////////////////////////
+Name: Reginald Edward
+Email: redward7@myseneca.ca
+Student Number: 149047227
+Date: July 06, 2023
+Section: OOP244 NAA
+
+I have most of the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments. I got help
+from professor Fardad in fixing the getFile function to add a line to clear
+the input buffer.
+///////////////////////////////////////////////////////////////////////////*/
+Workshop 06 has taught me how to read and write to a file. It has also taught me how to use the delete keyaord to prevent copy constructor and copy assignment. Lastly, it has taught me how to implement the copy constructor and copy assignment operator. This was by far the hardest workshop compared to the other workshops I have done previously. The difficult part of the workshop is working with ifstream and ofstream. For the most part of the workshop I had to reference the notes of 
+input and output operators. I had to review constantly the File I/O operators and the getline helper function to continue 
+with my workshop. Luckily, just like previous workshops, the notes on what each function is expected to do, made this 
+workshop a little clearer for me. However, one of the biggest challenges I had with the workshop is the view() function. 
+The view function wanted us to pause after printing m_pageSize, then the user would have to press enter to continue. I assumed that by using the cin.ignore function I can just clear the input buffer until a newline character is reached. However, that was not the case because for some reason it would skip the first pause and only execute for the second pause. This made me want to figure out what was in the input buffer so after researching on stack overflow I was able to find a function (cin.peek()) to give me what was in the input buffer without consuming it. When I used that function it showed that there was a newline character but it was present before each input buffer so I realized that was not the issue. But when I moved the cin.peek to after my ignore, the code for some reason worked. Since I know this was not the correct way to do it, I have asked Professor Fardad to help me look at it. Since I need to have something handed in before the due date, I submitted the code with cin.peek function as it still helped me with getting the final result.
+
+Update Monday July 10th:
+
+After having a meeting with professor Fardad is found out that the issue with the code was not in the view function but 
+in the getFile function. I was supposed to clear the input buffer after getting the file. Since the input buffer was not clear there was a newline character that was still in there. This newline character affected the pause from going through. This is why the cin.peek kept saying there was a new line character initially.
