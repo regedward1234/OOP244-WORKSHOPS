@@ -42,7 +42,7 @@ namespace sdds {
 
 	MenuItem::~MenuItem() {
 		// deallocate memeory for menuItemContent
-		delete menuItemContent;
+		delete[] menuItemContent;
 	}
 
 	MenuItem::operator bool() const {

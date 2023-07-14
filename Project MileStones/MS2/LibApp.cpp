@@ -9,7 +9,7 @@
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-//Reginald         2023/07/14
+//Reginald         2023/07/14     Added the preliminary code for the project
 /////////////////////////////////////////////////////////////////
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
@@ -74,7 +74,7 @@ namespace sdds {
 	}
 
 	void LibApp::removePublication() {
-		cout << "Remove publication from library" << endl;
+		cout << "Removing publication from library" << endl;
 		search();
 
 		// if confirm function returns true then change m_changed to true and print line

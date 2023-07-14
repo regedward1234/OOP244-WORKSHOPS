@@ -35,7 +35,6 @@ namespace sdds {
    public:
        LibApp();
        void run();
-                         
    };
 }
 #endif // !SDDS_LIBAPP_H
