@@ -1,15 +1,15 @@
 /***********************************************************************
 // OOP244 Utils Module
 // File	Utils.h
-// Version 
-// Date	
-// Author	
-// Description
+// Version: 1.0
+// Date: July 4th 2023
+// Author: Reginald Edward
+// Description: To =help in the main functions
 //
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-// 
+// Reginald        July4th         Added the strLen and strCpy to use in modules
 /////////////////////////////////////////////////////////////////
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.

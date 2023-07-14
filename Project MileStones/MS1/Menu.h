@@ -1,15 +1,16 @@
 /***********************************************************************
 // OOP244 Menu Module
 // File	Menu.h
-// Version
-// Date
-// Author
-// Description
+// Version: 1.0
+// Date: July 4th 2023
+// Author: Reginald Edward
+// Description: To display menu on screen and keep track of user selection
 //
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-//
+//Reginald         July4th        Added prototypes for the code 
+//Reginald         Huly 14th      Fixed the display function headers
 /////////////////////////////////////////////////////////////////
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
@@ -34,7 +35,7 @@ namespace sdds {
 		~MenuItem();
 		operator bool() const; // returns true if it is not empty
 		operator const char* () const; // return the address of the contect Cstring
-		std::ostream& display()const; // display the menucontent
+		void displaymenuItem(std::ostream& os) const; // display the menucontent
 	};
 
 	class Menu {
@@ -48,17 +49,19 @@ namespace sdds {
 		Menu(); // no argument constructor 
 		Menu(const char* title); // Argument constructor that passes a menu title
 		~Menu(); // destructor to delete pointer
-		void displayTitle(); // display title of the menu
-		std::ostream& display()const; // display entire menu on ostream
+		void displayTitle(std:: ostream& os) const; // display title of the menu
+		void displayMenu(std::ostream& os) const; // display entire menu on ostream
 		unsigned int run(); // displays the menu and gets user selection
 		unsigned int operator~(); // overloaded ~ to do what run function does 
-		Menu& operator<<(const char* menuitemConent); // overloaded << to add MenuItem to the Menu
+		Menu& operator<<(const char* menuitemContent); // overloaded << to add MenuItem to the Menu
 		operator int() const; // return number of MenuItems on the Menu
 		operator unsigned int() const; // return number of MenuItems on the Menu
 		operator bool() const; // return true if the Menu has one or more MenuItems
 		const char* operator[](unsigned int passedIndex) const; // return the const char* cast of corresponding MenuItem in the array of MenuItem pointers
 		
 	};
+	std::ostream& operator<<(std::ostream& os, const Menu& menu);
+	
 
 
 

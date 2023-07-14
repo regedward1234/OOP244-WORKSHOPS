@@ -6,7 +6,7 @@
 // Revision History
 // -----------------------------------------------------------
 // Name               Date                 Reason
-// 
+// Reginald           July4th              Added the read write and overloaded operators
 /////////////////////////////////////////////////////////////////
 #define _CRT_SECURE_NO_WARNINGS
 #include <iomanip>
