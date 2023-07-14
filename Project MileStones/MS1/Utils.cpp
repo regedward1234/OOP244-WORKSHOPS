@@ -9,7 +9,7 @@
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-//Reginald         July4th         Added the prototypes for strLen and strCpy
+//Reginald         2023/07/04      Added the prototypes for strLen and strCpy
 /////////////////////////////////////////////////////////////////
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.

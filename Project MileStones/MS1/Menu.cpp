@@ -9,8 +9,9 @@
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-//Reginald         July 4th        Added intitial code based on project notes
-//Reginald         July 14th       Fixed each function so that it works
+//Reginald         2023/07/04       Added intitial code based on project notes
+//Reginald         2023/07/14       Added rest of the code Fixed each function so that it works
+//Reginald         2023/07/14       Fixed the display function and the delete memory
 /////////////////////////////////////////////////////////////////
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.

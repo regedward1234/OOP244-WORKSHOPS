@@ -9,8 +9,8 @@
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-//Reginald         July4th        Added prototypes for the code 
-//Reginald         Huly 14th      Fixed the display function headers
+//Reginald         2023/07/04      Added prototypes for the code 
+//Reginald         2023/07/14      Fixed the display function headers
 /////////////////////////////////////////////////////////////////
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.

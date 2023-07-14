@@ -6,7 +6,7 @@
 // Revision History
 // -----------------------------------------------------------
 // Name               Date                 Reason
-// Reginald           July4th              Added the read write and overloaded operators
+// Reginald           2023/07/04           Added the read write and overloaded operators
 /////////////////////////////////////////////////////////////////
 #define _CRT_SECURE_NO_WARNINGS
 #include <iomanip>
@@ -140,6 +140,7 @@ namespace sdds {
 		return os;
 	}
 
+	// compare the date to see if they are equal
 	bool Date::operator==(const Date& anotherDate) const {
 		bool temp;
 
@@ -154,6 +155,7 @@ namespace sdds {
 		return temp;
 	}
 
+	// compare the date to see if they are not equal
 	bool Date::operator!=(const Date& anotherDate) const {
 		bool temp;
 
@@ -168,6 +170,7 @@ namespace sdds {
 		return temp;
 	}
 
+	// compare the date to see if current date is greater than or equal to incoming date
 	bool Date::operator>=(const Date& anotherDate) const {
 		bool temp;
 
@@ -182,6 +185,7 @@ namespace sdds {
 		return temp;
 	}
 
+	// compare the date to see if current date is less than or equal to incoming date
 	bool Date::operator<=(const Date& anotherDate) const {
 		bool temp;
 
@@ -196,6 +200,7 @@ namespace sdds {
 		return temp;
 	}
 
+	// compare the date to see if current date is less than to incoming date
 	bool Date::operator<(const Date& anotherDate) const {
 		bool temp;
 
@@ -210,6 +215,7 @@ namespace sdds {
 		return temp;
 	}
 
+	// compare the date to see if current date is greater than to incoming date
 	bool Date::operator>(const Date& anotherDate) const {
 		bool temp;
 
@@ -224,6 +230,7 @@ namespace sdds {
 		return temp;
 	}
 
+	// return different between two dates
 	int Date::operator-(const Date& anotherDate) const {
 		int temp;
 
@@ -231,6 +238,7 @@ namespace sdds {
 		return temp;
 	}
 
+	// if date is valid return true
 	Date::operator bool() const {
 		bool temp;
 
@@ -241,8 +249,7 @@ namespace sdds {
 		else {
 			temp = true;
 		}
-
+		
 		return temp;
 	}
-
 }

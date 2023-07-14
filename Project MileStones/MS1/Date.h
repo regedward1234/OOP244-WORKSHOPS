@@ -6,7 +6,7 @@
 // Revision History
 // -----------------------------------------------------------
 // Name               Date                 Reason
-// 
+// Reginald           2023/07/04           Added prototypes for overloaded operatorsand read write functions
 /////////////////////////////////////////////////////////////////
 #ifndef SDDS_DATE_H__
 #define SDDS_DATE_H__
