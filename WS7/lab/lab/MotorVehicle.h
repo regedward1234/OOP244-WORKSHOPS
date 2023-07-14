@@ -29,7 +29,7 @@ namespace sdds {
 		// constructor to set license and year
 		MotorVehicle(char* license, int year);
 		// move vechicle to new address if new is different
-		void moveTo(const char* address);
+		void moveTo(const char* newAddress);
 		// a query that places into os the content of the object
 		ostream& write(ostream& os) const;
 		// a mutator that reads from stream

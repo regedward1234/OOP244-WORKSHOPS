@@ -29,7 +29,50 @@ namespace sdds {
 		}
 	}
 
-	void MotorVehicle::moveTo(const char* address) {
+	void MotorVehicle::moveTo(const char* newAddress) {
+		if (strCmp(address, newAddress) != 0) {
+			cout << "|[";
+			cout.width(8);
+			cout.setf(ios::right);
+			cout << licensePlate;
+			cout.unsetf(ios::right);
+			cout << "]| |[";
+			cout.width(20);
+			cout.setf(ios::right);
+			cout << address;
+			cout.unsetf(ios::right);
+			cout << "] ---> [";
+			cout.width(20);
+			cout.setf(ios::right);
+			cout << newAddress;
+			cout.unsetf(ios::right);
+			cout << "]|" << endl;
 
+			strCpy(address, newAddress);
+		}
 	}
+	ostream& MotorVehicle::write(ostream& os) const {
+		 os << "| [" << year << "] | [" << licensePlate << "] | [" << address << "]" << endl;
+		 return os;
+	}
+
+	istream& MotorVehicle::read(istream& in) {
+		cout << "Built year: ";
+		cin >> year;
+		cout << "License plate ";
+		cin >> licensePlate;
+		cout << "Current location: ";
+		cin >> address;
+
+		return cin;
+	}
+
+	std::ostream& operator<<(std::ostream& os, MotorVehicle& vehicle) {
+		return vehicle.write(os);
+	}
+
+	std::istream& operator>>(std::istream& in, MotorVehicle& vehicle) {
+		return vehicle.read(in);
+	}
+
 }
