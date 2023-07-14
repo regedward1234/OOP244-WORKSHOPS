@@ -61,4 +61,35 @@ namespace sdds {
 		cout << "Publication returned" << endl;
 		m_changed = true;
 	}
+
+	void LibApp::newPublication() {
+		cout << "Adding new publication to library" << endl;
+		
+		// if confirm function returns true then change m_changed to true and print line
+		if (confirm("Add this publication to library?") == true) {
+			m_changed = true;
+			cout << "Publication added" << endl;
+		}
+	}
+
+	void LibApp::removePublication() {
+		cout << "Remove publication from library" << endl;
+		search();
+
+		// if confirm function returns true then change m_changed to true and print line
+		if (confirm("Remove this publication from the library?") == true) {
+			m_changed = true;
+			cout << "Publication removed" << endl;
+		}
+	}
+
+	void LibApp::checkOutPub() {
+		search();
+
+		// if confirm function true then change m_changed to true and print line
+		if (confirm("Check out publication?") == true) {
+			m_changed = true;
+			cout << "Publication checked out" << endl;
+		}
+	}
 }
