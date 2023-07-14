@@ -114,6 +114,7 @@ namespace sdds {
 	void LibApp::run() {
 		int userSelection;
 		int UserSelectionForExit;
+		bool terminateMessage = false;
 
 		do {
 			// display main menu
@@ -147,24 +148,34 @@ namespace sdds {
 			// if user enters 1 in exit screen call save
 			if (UserSelectionForExit == 1) {
 				save();
-				
-			}
+				terminateMessage = true;
 
+			}
 			// if user enters 2 in exit screen call run function
 			else if (UserSelectionForExit == 2) {
 				cout << endl;
 				run();
 			}
-
 			else {
+				// if true then go back to main menu
 				if (confirm("This will discard all the changes are you sure?") == false) {
 					run();
 				}
+				else {
+					terminateMessage = true;
+				}
 			}
 		}
-		cout << endl;
-		cout << "-------------------------------------------" << endl;
-		cout << "Thanks for using Seneca Library Application" << endl;
+		else {
+			terminateMessage = true;
+		}
+
+		if (terminateMessage == true) {
+			// print exit message
+			cout << endl;
+			cout << "-------------------------------------------" << endl;
+			cout << "Thanks for using Seneca Library Application" << endl;
+		}
 	}
 
 	 
