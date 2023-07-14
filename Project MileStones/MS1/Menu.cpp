@@ -129,7 +129,7 @@ namespace sdds {
 		// display menu and get user selection
 		displayMenu(cout);
 
-		unsigned int userSelection;
+		int userSelection;
 
 		// flag to get out of do while loop
 		bool valid = false;

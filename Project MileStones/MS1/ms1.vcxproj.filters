@@ -24,7 +24,7 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="menuTester.cpp">
+    <ClCompile Include="ms1_tester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
