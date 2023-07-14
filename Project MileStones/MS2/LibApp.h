@@ -29,11 +29,11 @@ namespace sdds {
        void save(); // prints: "Saving Data"<NEWLINE>
        void search(); // prints: "Searching for publication"<NEWLINE>
        void returnPub(); //  Calls the search() method.
-   public:
-       LibApp();
        void newPublication(); // adds new publication to library
        void removePublication(); // removes publication from library
        void checkOutPub(); // calls search then confirm methods
+   public:
+       LibApp();
        void run();
                          
    };

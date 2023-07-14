@@ -58,7 +58,7 @@ namespace sdds {
 		// call search function, prints lines, change value of m_changed to true
 		search();
 		cout << "Returning publication" << endl;
-		cout << "Publication returned" << endl;
+		cout << "Publication returned" << endl << endl;
 		m_changed = true;
 	}
 
@@ -68,8 +68,9 @@ namespace sdds {
 		// if confirm function returns true then change m_changed to true and print line
 		if (confirm("Add this publication to library?") == true) {
 			m_changed = true;
-			cout << "Publication added" << endl;
+			cout << "Publication added";
 		}
+		cout << endl;
 	}
 
 	void LibApp::removePublication() {
@@ -79,7 +80,7 @@ namespace sdds {
 		// if confirm function returns true then change m_changed to true and print line
 		if (confirm("Remove this publication from the library?") == true) {
 			m_changed = true;
-			cout << "Publication removed" << endl;
+			cout << "Publication removed" << endl << endl;
 		}
 	}
 
@@ -89,7 +90,82 @@ namespace sdds {
 		// if confirm function true then change m_changed to true and print line
 		if (confirm("Check out publication?") == true) {
 			m_changed = true;
-			cout << "Publication checked out" << endl;
+			cout << "Publication checked out" << endl << endl;
 		}
 	}
+
+	// initalize mainMenu and exitMenu during construction using constructor initialization
+	LibApp::LibApp(): m_changed (false), m_mainMenu("Seneca Library Application"), m_exitMenu ("Changes have been made to the data, what would you like to do?") {
+			
+		// add the menu items using the overloaded operator <<
+		m_mainMenu << "Add New Publication";
+		m_mainMenu << "Remove Publication";
+		m_mainMenu << "Checkout publication from library";
+		m_mainMenu << "Return publication to library";
+
+		// add the exit menu items using the overloaded operator <<
+		m_exitMenu << "Save changes and exit";
+		m_exitMenu << "Cancel and go back to the main menu";
+
+		// call the load method
+		load();
+	}
+
+	void LibApp::run() {
+		int userSelection;
+		int UserSelectionForExit;
+
+		do {
+			// display main menu
+			userSelection = m_mainMenu.run();
+
+			// based on userSelection calls corresponding private method
+			if (userSelection == 1) {
+				newPublication();
+			}
+
+			if (userSelection == 2) {
+				removePublication();
+			}
+
+			if (userSelection == 3) {
+				checkOutPub();
+			}
+
+			if (userSelection == 4) {
+				returnPub();
+			}
+
+		} while (userSelection != 0);
+
+		/* examine m_changed if it false then terminate program if true
+		* call the exit menu using run and go to two other options of exiting
+		*/
+		if (m_changed == true) {
+			UserSelectionForExit = m_exitMenu.run();
+
+			// if user enters 1 in exit screen call save
+			if (UserSelectionForExit == 1) {
+				save();
+				
+			}
+
+			// if user enters 2 in exit screen call run function
+			else if (UserSelectionForExit == 2) {
+				cout << endl;
+				run();
+			}
+
+			else {
+				if (confirm("This will discard all the changes are you sure?") == false) {
+					run();
+				}
+			}
+		}
+		cout << endl;
+		cout << "-------------------------------------------" << endl;
+		cout << "Thanks for using Seneca Library Application" << endl;
+	}
+
+	 
 }

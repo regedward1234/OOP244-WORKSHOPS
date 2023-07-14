@@ -110,13 +110,12 @@ namespace sdds {
 
 	void Menu::displayMenu(std::ostream& os) const {
 		displayTitle(os);
-
+		cout << endl;
 		for (int i = 0; i < itemCount; i++) {
 			os.width(2);
 			os.setf(ios::right);
 			os << i + 1 << "- ";
 			os.unsetf(ios::right);
-			//os << menuItems[i] << endl;
 			menuItems[i]->displaymenuItem(os);
 			os << endl;
 		}
