@@ -3,7 +3,11 @@
 // Workshop 7
 // Version 1.0
 // Description:Add a derived class
-//
+// Name: Reginald Edward
+// Email: redward7@myseneca.ca
+// Student Number: 149047227
+// Date: July 14, 2023
+// Section: OOP244 NAA
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
@@ -66,7 +70,7 @@ namespace sdds {
 	// output to screen
 	ostream& Truck::write(ostream& os) {
 		MotorVehicle::write(os);
-		os << " | " << currentCargoLoad << "/" << weightCapacity << endl;
+		os << " | " << currentCargoLoad << "/" << weightCapacity;
 		return os;
 	}
 
