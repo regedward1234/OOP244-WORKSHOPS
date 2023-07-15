@@ -21,53 +21,54 @@ professor provided to complete my workshops and assignments.
 using namespace std;
 
 namespace sdds {
-	MotorVehicle::MotorVehicle(char* license, int year) {
+	MotorVehicle::MotorVehicle(const char* license, int years) {
 		if (license != nullptr) {
-			year = year;
+			year = years;
 			strnCpy(licensePlate, license, 8);
-			strCpy(address, "Factory");
+			licensePlate[8] = '\0';
+			strnCpy(address, "Factory", 64);
+			address[64] = '\0';
 		}
 	}
 
 	void MotorVehicle::moveTo(const char* newAddress) {
 		if (strCmp(address, newAddress) != 0) {
-			cout << "|[";
+			cout << "|";
 			cout.width(8);
 			cout.setf(ios::right);
 			cout << licensePlate;
 			cout.unsetf(ios::right);
-			cout << "]| |[";
+			cout << "| |";
 			cout.width(20);
 			cout.setf(ios::right);
 			cout << address;
 			cout.unsetf(ios::right);
-			cout << "] ---> [";
+			cout << " ---> ";
 			cout.width(20);
-			cout.setf(ios::right);
+			cout.setf(ios::left);
 			cout << newAddress;
-			cout.unsetf(ios::right);
-			cout << "]|" << endl;
+			cout.unsetf(ios::left);
+			cout << "|" << endl;
 
 			strCpy(address, newAddress);
 		}
 	}
 	ostream& MotorVehicle::write(ostream& os) const {
-		 os << "| [" << year << "] | [" << licensePlate << "] | [" << address << "]" << endl;
+		 os << "| " << year << " | " << licensePlate << " | " << address << "";
 		 return os;
 	}
 
 	istream& MotorVehicle::read(istream& in) {
 		cout << "Built year: ";
 		cin >> year;
-		cout << "License plate ";
+		cout << "License plate: ";
 		cin >> licensePlate;
 		cout << "Current location: ";
 		cin >> address;
-
 		return cin;
 	}
 
-	std::ostream& operator<<(std::ostream& os, MotorVehicle& vehicle) {
+	std::ostream& operator<<(std::ostream& os, const MotorVehicle& vehicle) {
 		return vehicle.write(os);
 	}
 

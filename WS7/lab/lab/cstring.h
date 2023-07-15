@@ -3,7 +3,6 @@
 // Workshop 7
 // Version 1.0
 // Description
-// professor's tester program
 //
 // Revision History
 // -----------------------------------------------------------
@@ -40,6 +39,5 @@ namespace sdds {
     // Concantinates "src" C-string to the end of "des"
     void strCat(char* des, const char* src);
 
-}
 }
 #endif 

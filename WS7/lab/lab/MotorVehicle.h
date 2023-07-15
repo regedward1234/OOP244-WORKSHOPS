@@ -7,7 +7,8 @@
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-//Reginald         2023/07/14      Create a class that holds information about a vehicle
+//Reginald         2023/07/14      Create a MotorVehicle class that holds information about a vehicle
+//Reginald         2023/07/15      Added const to ostream helper function as it should not be changed
 /////////////////////////////////////////////////////////////////
 I have done all the coding by myself and only copied the code that my
 professor provided to complete my workshops and assignments.
@@ -21,13 +22,12 @@ professor provided to complete my workshops and assignments.
 using namespace std;
 namespace sdds {
 	class MotorVehicle {
-		int vehicleEngine;
 		char licensePlate[LICENSE_PLATE];
 		char address[ADDRESS_SIZE];
 		int year;
 	public:
 		// constructor to set license and year
-		MotorVehicle(char* license, int year);
+		MotorVehicle(const char* license, int years);
 		// move vechicle to new address if new is different
 		void moveTo(const char* newAddress);
 		// a query that places into os the content of the object
@@ -37,7 +37,7 @@ namespace sdds {
 	};
 
 	// insert vehicle into a stream
-	std::ostream& operator<<(std::ostream& os, MotorVehicle& vehicle);
+	std::ostream& operator<<(std::ostream& os, const MotorVehicle& vehicle);
 	// extract vehicle from stream
 	std::istream& operator>>(std::istream& in, MotorVehicle& vehicle);
 
