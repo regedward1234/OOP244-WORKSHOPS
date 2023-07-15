@@ -8,6 +8,7 @@
 // -----------------------------------------------------------
 // Name            Date            Reason
 //Reginald         2023/07/14      Implement the functions 
+//Reginald         2023/07/15      Added const to ostream helper function as it should not be changed
 /////////////////////////////////////////////////////////////////
 I have done all the coding by myself and only copied the code that my
 professor provided to complete my workshops and assignments.
@@ -21,6 +22,7 @@ professor provided to complete my workshops and assignments.
 using namespace std;
 
 namespace sdds {
+	// constructor to initialize the object with incoming arguments
 	MotorVehicle::MotorVehicle(const char* license, int years) {
 		if (license != nullptr) {
 			year = years;
@@ -31,6 +33,7 @@ namespace sdds {
 		}
 	}
 
+	// replace the address with new address if its different and display to screen
 	void MotorVehicle::moveTo(const char* newAddress) {
 		if (strCmp(address, newAddress) != 0) {
 			cout << "|";
@@ -53,11 +56,14 @@ namespace sdds {
 			strCpy(address, newAddress);
 		}
 	}
+
+	// display to screen the year, license plate, and address
 	ostream& MotorVehicle::write(ostream& os) const {
 		 os << "| " << year << " | " << licensePlate << " | " << address << "";
 		 return os;
 	}
 
+	// read from user input
 	istream& MotorVehicle::read(istream& in) {
 		cout << "Built year: ";
 		cin >> year;
@@ -68,10 +74,12 @@ namespace sdds {
 		return cin;
 	}
 
+	// return the write function
 	std::ostream& operator<<(std::ostream& os, const MotorVehicle& vehicle) {
 		return vehicle.write(os);
 	}
 
+	//return the read function
 	std::istream& operator>>(std::istream& in, MotorVehicle& vehicle) {
 		return vehicle.read(in);
 	}
