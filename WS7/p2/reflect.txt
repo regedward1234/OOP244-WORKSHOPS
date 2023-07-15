@@ -1,0 +1,15 @@
+/***********************************************************************
+// Intro. to Object Oriented Programming
+// Workshop 7
+// Version 1.0
+// Description:Reflection on workshop 7
+//
+// Revision History
+// -----------------------------------------------------------
+// Name            Date            Reason
+//Reginald         2023/07/15      Added reflection
+/////////////////////////////////////////////////////////////////
+I have done all the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments.
+***********************************************************************/
+For workshop 07 we focused on inheritance. Inheritance is when one class inherits the structure of another class. In this workshop the MotorVehicle was the base class and the Truck was the derived class that inherits the structure of MotorVehicle. To have truck class inherit the structure of the base class, I had to include the line class Truck : public MotorVehicle. In the constructor in the truck class we added onto the MotorVehicle class by first initializing the arguments with the MotorVehicle class and then initializing the rest of the arguments. For this workshop we did not use dynamic array, so we did not need to allocate and deallocate memory, for this reason we did not have to use the virtual keyword. If we did use dynamic allocation, then we would need to ensure virtual was used especially for the destructors for both classes. My biggest issue with this workshop was the addCargo since I took a while to understand what it was trying to say. After may tries and debugging the program, I understood where I went wrong in the logic and was able to fix my code. This workshop was a good intro to inheritance because it showed me what inheritance is, how to make one class a base class and one class a derived class and how to use the methods of the base class in the derived class. 
