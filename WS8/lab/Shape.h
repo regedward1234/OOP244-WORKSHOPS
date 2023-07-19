@@ -16,7 +16,7 @@ professor provided to complete my workshops and assignments.
 ***********************************************************************/
 #ifndef _SDDS_SHAPE_H_
 #define _SDDS_SHAPE_H_
-
+#include <iostream>
 namespace sdds {
 	class Shape {
 	public:

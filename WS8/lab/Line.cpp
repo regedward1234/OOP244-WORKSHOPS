@@ -20,7 +20,7 @@ professor provided to complete my workshops and assignments.
 using namespace std;
 namespace sdds {
 	// set m_length to 0, and invoke default constructor of base class
-	Line::Line(): m_length(0), LblShape() {}
+	Line::Line():LblShape(), m_length(0) {}
 	
 	// passes Cstring to constructor of the base class and sets m_length to value of second argument
 	Line::Line(const char* Cstring, int lengthOfLine) : LblShape(Cstring), m_length(lengthOfLine) {}

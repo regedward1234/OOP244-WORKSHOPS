@@ -16,12 +16,12 @@ professor provided to complete my workshops and assignments.
 ***********************************************************************/
 #include <iostream>
 #include "Rectangle.h"
-#include "cstring.h"
+#include "Utils.h"
 
 using namespace std;
 namespace sdds {
 	// set width and height to 0 and invoke default constructor of base class
-	Rectangle::Rectangle() : m_width(0), m_height(0), LblShape(){}
+	Rectangle::Rectangle() : LblShape(), m_width(0), m_height(0) {}
 
 	Rectangle::Rectangle(const char* cString, int width, int height) : LblShape(cString), m_width(width), m_height(height) {
 		// check if height less than 3 and width less than length of label + 2, if so set rectangle to empty state
@@ -70,6 +70,7 @@ namespace sdds {
 			for (int i = 0; i < m_width - 2; i++) {
 				os << "-";
 			}
+			os << "+";
 
 		}
 	}
