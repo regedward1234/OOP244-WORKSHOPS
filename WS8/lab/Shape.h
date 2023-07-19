@@ -21,15 +21,15 @@ namespace sdds {
 	class Shape {
 	public:
 		// pure virtual that receives a reference to ostream as argument
-		virtual void draw(ostream& os) const = 0;
+		virtual void draw(std::ostream& os) const = 0;
 		// pure virtual that receives a reference to istream as argument
-		virtual void getSpecs(istream& is) = 0;
+		virtual void getSpecs(std::istream& is) = 0;
 		// virtual destructor initalized to empty
 		virtual ~Shape() {};
 };
 	// overloading the insertion operator for writing a shape
-	ostream& operator<<(ostream& os, const Shape& shape);
+	std::ostream& operator<<(std::ostream& os, const Shape& shape);
 	// overloading the extraction operator for reading a shape
-	istream& operator>>(istream& is, Shape& shape);
+	std::istream& operator>>(std::istream& is, Shape& shape);
 }
 #endif
