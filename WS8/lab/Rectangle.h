@@ -16,6 +16,23 @@ professor provided to complete my workshops and assignments.
 ***********************************************************************/
 #ifndef _SDDS_RECTANGLE_H_
 #define _SDDS_RECTANGLE_H_
+#include "LblShape.h"
+
+namespace sdds {
+	class Rectangle : public LblShape {
+		int m_width;
+		int m_height;
+	public:
+		// no argument constructor
+		Rectangle();
+		// three argument constructor
+		Rectangle(const char* cString, int width, int height);
+		// reads comma separated specs of the rectangle from istream
+		void getSpecs(std::istream& is);
+		// draws rectangle
+		void draw(std::ostream& os) const;
+	};
+}
 
 
 

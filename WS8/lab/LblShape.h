@@ -21,7 +21,7 @@ professor provided to complete my workshops and assignments.
 
 namespace sdds {
 	class LblShape : public Shape {
-		char* m_label = nullptr;
+		char* m_label; 
 	protected:
 		// query to get label
 		const char* label()const;

@@ -14,6 +14,7 @@
 I have done all the coding by myself and only copied the code that my
 professor provided to complete my workshops and assignments.
 ***********************************************************************/
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "LblShape.h"
 #include "cstring.h"
@@ -29,7 +30,7 @@ namespace sdds {
 	LblShape::LblShape() : m_label(nullptr) {}
     
 	// one argument constructor that sets incoming argument to attribute
-	LblShape::LblShape(const char* labelString) {
+	LblShape::LblShape(const char* labelString) : m_label(nullptr){
 		if (labelString != nullptr) {
 			m_label = new char[strLen(labelString) + 1];
 			strCpy(m_label, labelString);
@@ -44,8 +45,7 @@ namespace sdds {
 	// read line until "," reached and allocate memory to hold it
 	void LblShape::getSpecs(std::istream& is) {
 		char tempString[1000];
-		is.getline(tempString, ',');
-		is.ignore();
+		is.getline(tempString,1000, ',');
 
 		delete[] m_label;
 

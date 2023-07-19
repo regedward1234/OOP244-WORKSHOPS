@@ -16,7 +16,22 @@ professor provided to complete my workshops and assignments.
 ***********************************************************************/
 #ifndef _SDDS_LINE_H_
 #define _SDDS_LINE_H_
+#include "LblShape.h"
 
+namespace sdds {
+	class Line : public LblShape {
+		int m_length;
+	public:	
+		// no argument constructor
+		Line();
+		// two argument constructor
+		Line(const char* string, int lengthOfLine);
+		// reads commma separated specs of the line from istream
+		void getSpecs(std::istream& is);
+		// overrides draw of baseclass and prints to screen
+		void draw(std::ostream& os) const;
+	};
+}
 
 
 
