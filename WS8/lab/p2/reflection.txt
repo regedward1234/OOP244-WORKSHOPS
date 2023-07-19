@@ -1,0 +1,20 @@
+/***********************************************************************
+// Intro. to Object Oriented Programming
+// Workshop 8
+// Version 1.0
+// Description:Reflection on workshop 8
+//Name: Reginald Edward
+//Email: redward7@myseneca.ca
+//Student Number: 149047227
+//Date: July 19, 2023
+//Section: OOP244 NAA
+//
+// Revision History
+// -----------------------------------------------------------
+// Name            Date            Reason
+//Reginald         2023/07/19      Added reflection
+/////////////////////////////////////////////////////////////////
+I have done all the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments.
+***********************************************************************/
+For this workshop, I got to learn and understand how inheritance works. I also learned about pure virtual and virtual. The virtual function instructs the compiler to find the most recent version of the function. Pure virtual functions do not have implementation and only creates an interface for the derived classes. By doing this workshop, I learned that a concrete class is made only when all the functions are implemented. If there is even one function that is not implemented, then it is an abstract base class. By doing this workshop, I also learned that setting the destructor to virtual is a good practice so that we ensure that there is no memory leak that occurs. Another important think this workshop has helped me with is understanding how to invoke constructors from other classes. I did not know before that it can be done on one line separated with a colon. For example: Rectangle::Rectangle(const char* cString, int width, int height) : LblShape(cString), m_width(width), m_height(height) {}. This function will invoke the LblShape constructor and set the width and height in one line. Another thing I learned but should have been obvious is the order of which it needs to be placed. The invoking of constructor needs to take place first before setting the height and weight to 0. One of the biggest issues I had with this workshop and with workshops before this is the getline and ignore functions. It seems like right now it is a trial and error for me to understand what is being extracted from the input buffer and what still stays in the input buffer. However, with the time I took to understand it for this workshop, I think I have got a good grasp of it for my future workshops and milestones. Overall, this workshop has taught me inheritance and how to inherit the structure of one class to a derived class, the virtual and pure virtual functions, and how to invoke constructors of base classes.
