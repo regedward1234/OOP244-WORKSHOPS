@@ -21,10 +21,28 @@ that my professor provided to complete my workshops and assignments.
 #include "Publication.h"
 
 namespace sdds {
-	
+	class Book : public Publication {
+		char* authorName;
+	public:
+		// constructor for book
+		Book();
+		// copy constructor
+		Book(const Book& otherBook);
+		// copy assignment operator
+		Book& operator =(const Book& otherBook);
+		// destructor to deallocate memory
+		virtual ~Book();
+		// return character B
+		virtual char type() const;
+		// display to screen publication with author name
+		virtual std::ostream& write(std::ostream& os) const;
+		// read author name
+		virtual std::istream& read(std::istream& istr);
+		// invoke set of base class
+		virtual void set(int member_id);
+		//returns true if author name exists and not empty and base class returns true
+		virtual operator bool() const;
+
+	};
 }
-
-
-
-
 #endif
