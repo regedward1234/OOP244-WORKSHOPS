@@ -27,11 +27,11 @@ namespace sdds {
 		// pure virtual that will read from an istream object
 		virtual std::istream& read(std::istream& is) = 0;
 		// receives reference of an ios object and returns a bool
-		virtual bool conIO(const std::ios& ios) const = 0;
+		virtual bool conIO(std::ios& ios) const = 0;
 		// returns true if streamable object is in valid state
 		virtual operator bool() const = 0;
 		// destructor 
-		virtual ~Streamable();
+		virtual ~Streamable() {};
 	};
 	// Overload the insertion operator so a object of type Streamable can be written on an ostream object
 	std::ostream& operator<<(std::ostream&os, const Streamable& streamObject);
