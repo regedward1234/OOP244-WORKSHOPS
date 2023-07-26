@@ -8,7 +8,7 @@
 // Name               Date                 Reason
 // Reginald           2023/07/21          Added function implementations for Publications
 // Reginald           2023/07/21          Fixed the read and write functions
-// Reginald           2023/07/26          Added fail state to input string after research
+// Reginald           2023/07/26          Added fail state to input string after research on stackoverflow
 //////////////////////////////////////////////////////////////////////////////////////////
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
