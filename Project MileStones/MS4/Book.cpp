@@ -84,4 +84,34 @@ namespace sdds {
 		return os;
 	}
 
+	istream& Book::read(istream& istr) {
+		char tempAuthorName[1000];
+		// invoke the read of the base class
+		Publication::read(istr);
+		
+		// free memory held for author's name
+		delete[] authorName;
+
+		// if incoming argument is console IO object
+		if (conIO(istr) == true) {
+			// skip the /n
+			istr.ignore();
+			cout << "Author: ";
+			istr.getline(tempAuthorName, 1000);
+		}
+		else {
+			// ignore the tab character
+			istr.ignore();
+			istr.getline(tempAuthorName, 1000);
+		}
+
+		// if istream not in a fail state dynamically hold the author's name in char pointer
+		if (istr) {
+			// dynamically allocate memory to size of temp string
+			authorName = new char[strLen(tempAuthorName) + 1];
+			// copy the tempAuthorName to attribute
+			strCpy(authorName, tempAuthorName);
+		}
+		return istr;
+	}
 }
