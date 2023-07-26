@@ -4,10 +4,14 @@
 // Version 2.0
 // Author	Fardad Soleimanloo
 // Revision History
-// -----------------------------------------------------------
+// --------------------------------------------------------------------------------------------------
 // Name               Date                 Reason
 // Reginald           2023/07/04           Added prototypes for overloaded operatorsand read write functions
 // Reginald           2023/07/21           Added the extern values to add global variables
+// ---------------------------------------------------------------------------------------------------
+// I have done all the coding by myself and only copied the code
+// that my professor provided to complete my workshops and assignments.
+//----------------------------------------------------------------------------------------------------
 /////////////////////////////////////////////////////////////////
 #ifndef SDDS_DATE_H__
 #define SDDS_DATE_H__

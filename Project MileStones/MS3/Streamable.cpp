@@ -7,6 +7,10 @@
 // -----------------------------------------------------------
 // Name               Date                 Reason
 // Reginald           2023/07/21          Added function implementations 
+//---------------------------------------------------------------------------------------------------
+//I have done all the coding by myself and only copied the code
+//that my professor provided to complete my workshops and assignments.
+//----------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>

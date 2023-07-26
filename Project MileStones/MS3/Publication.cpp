@@ -9,6 +9,10 @@
 // Reginald           2023/07/21          Added function implementations for Publications
 // Reginald           2023/07/21          Fixed the read and write functions
 // Reginald           2023/07/26          Added fail state to input string after research on stackoverflow
+//---------------------------------------------------------------------------------------------------
+//I have done all the coding by myself and only copied the code
+//that my professor provided to complete my workshops and assignments.
+//----------------------------------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////////
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
