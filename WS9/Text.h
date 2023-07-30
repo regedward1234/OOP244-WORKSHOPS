@@ -23,7 +23,7 @@ namespace sdds {
       char* m_content;
       int getFileLength()const;
    protected:
-      char& operator[](int index)const;
+      const char& operator[](int index)const;
    public:
       Text(const char* filename=nullptr);
       // copy constructor

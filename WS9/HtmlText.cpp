@@ -85,12 +85,11 @@ namespace sdds {
 		}
 		
 		int i = 0;
-		// use overloaded index operator to get access to m_content
-		char& ch = (*this)[i];
-		
+				
 		// loop through each character as long as not null terminated  
-		while (ch != '\0') {
-
+		while ((*this)[i] != '\0') {
+			const char& ch = (*this)[i];
+	
 			// check if each character meets specific req and replace them
 			if (ch == ' ') {
 				if (MS == true) {
@@ -121,7 +120,7 @@ namespace sdds {
 				os << ch;
 				MS = false;
 			}
-			ch = (*this)[++i];
+			++i;
 		}
 		os << "</body>\n</html>";
 	}

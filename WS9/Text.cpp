@@ -97,7 +97,7 @@ namespace sdds {
    }
 
    // index operator to return the value of m_content
-   char& Text::operator[](int index)const {
+   const char& Text::operator[](int index)const {
        return m_content[index];
    }
 
