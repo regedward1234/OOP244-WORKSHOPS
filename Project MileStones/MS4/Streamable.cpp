@@ -23,6 +23,7 @@ namespace sdds {
 		if (streamObject == true) {
 			streamObject.write(os);
 		}
+
 		return os;
 	}
 	istream& operator>>(istream& is, Streamable& streamObject) {

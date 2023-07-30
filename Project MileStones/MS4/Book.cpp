@@ -7,6 +7,7 @@
 // -----------------------------------------------------------
 // Name               Date                 Reason
 // Reginald           2023/07/26          Added book implementations 
+// Reginald	          2023/07/29          Fixed the read function from getline to get
 ////////////////////////////////////////////////////////////////////////
 /*I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
@@ -21,7 +22,7 @@ that my professor provided to complete my workshops and assignments.
 
 using namespace std;
 namespace sdds {
-	// constructor to create book empty be default
+	// constructor to create book empty by default
 	Book::Book() {
 		authorName = nullptr;
 	}
@@ -40,6 +41,7 @@ namespace sdds {
 
 	// copy assignment operator
 	Book& Book::operator =(const Book& otherBook) {
+		Publication::operator=(otherBook);
 		if (this != &otherBook) {
 			// delete the existing authorName and deep copy the new one
 			delete[] authorName;
@@ -50,7 +52,6 @@ namespace sdds {
 			else {
 				authorName = nullptr;
 			}
-
 		}
 		return *this;
 	}
@@ -73,8 +74,17 @@ namespace sdds {
 		if (conIO(os) == true) {
 			os << " ";
 			// set width to max length defined in Lib.h
-			os.width(SDDS_AUTHOR_WIDTH);
-			os << authorName;
+			if (strLen(authorName) < SDDS_AUTHOR_WIDTH) {
+				os.setf(ios::left);
+				os.width(SDDS_AUTHOR_WIDTH);
+				os << authorName;
+				os.unsetf(ios::left);
+			}
+			else {
+				for (int i = 0; i < SDDS_AUTHOR_WIDTH && authorName[i] != '\0'; i++) {
+					os << authorName[i];
+				}
+			}
 			os << " |";
 		}
 		else {
@@ -85,7 +95,8 @@ namespace sdds {
 	}
 
 	istream& Book::read(istream& istr) {
-		char tempAuthorName[1000];
+		authorName = nullptr;
+		char tempAuthorName[256]= { '\0' };;
 		// invoke the read of the base class
 		Publication::read(istr);
 		
@@ -97,12 +108,13 @@ namespace sdds {
 			// skip the /n
 			istr.ignore();
 			cout << "Author: ";
-			istr.getline(tempAuthorName, 1000);
+			istr.getline(tempAuthorName, 255);
+			
 		}
 		else {
 			// ignore the tab character
 			istr.ignore();
-			istr.getline(tempAuthorName, 1000);
+			istr.get(tempAuthorName, 256, '\n');
 		}
 
 		// if istream not in a fail state dynamically hold the author's name in char pointer
@@ -111,7 +123,30 @@ namespace sdds {
 			authorName = new char[strLen(tempAuthorName) + 1];
 			// copy the tempAuthorName to attribute
 			strCpy(authorName, tempAuthorName);
+			authorName[strLen(tempAuthorName)] = '\0';
+		} 
+		else {
+			authorName = nullptr;
 		}
 		return istr;
+	}
+	
+	void Book::set(int member_id) {
+		// invoke set of base class
+		Publication::set(member_id);
+		// reset date to current date
+		Publication::resetDate();
+	}
+
+	// return true if author's name exists and bae class operator bool is true
+	Book::operator bool() const {
+		bool temp;
+		if (authorName != nullptr && Publication::operator bool() == true) {
+			temp = true;
+		}
+		else {
+			temp = false;
+		}
+		return temp;
 	}
 }

@@ -89,7 +89,6 @@ namespace sdds {
 		else {
 			temp = false;
 		}
-
 		return temp;
 	}
 
@@ -110,11 +109,18 @@ namespace sdds {
 			os << "| " << m_shelfId << " | ";
 			
 			// left justify padded with dots for title 
-			os.setf(ios::left);
-			os.width(30);
-			os.fill('.');
-			os << m_title;
-			os.unsetf(ios::left);
+			if (strLen(m_title) < SDDS_TITLE_WIDTH) {
+				os.setf(ios::left);
+				os.width(SDDS_TITLE_WIDTH);
+				os.fill('.');
+				os << m_title;
+				os.unsetf(ios::left);
+			}
+			else {
+				for (int i = 0; i < SDDS_TITLE_WIDTH; i++) {
+					os << m_title[i];
+				}
+			}
 			os << " | ";
 
 			// check if membership is 0 and if so print N/A
@@ -203,7 +209,6 @@ namespace sdds {
 			strCpy(m_shelfId, tempShelfId);
 			m_date = tempDate;
 		}
-
 		return istr;
 	}
 
