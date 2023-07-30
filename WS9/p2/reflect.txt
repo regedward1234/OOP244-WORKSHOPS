@@ -1,0 +1,23 @@
+/***********************************************************************
+// Intro. to Object Oriented Programming
+// Workshop 9
+// Version 1.0
+// Description:Reflection on workshop 8
+//Name: Reginald Edward
+//Email: redward7@myseneca.ca
+//Student Number: 149047227
+//Date: July 30, 2023
+//Section: OOP244 NAA
+//
+// Revision History
+// -----------------------------------------------------------
+// Name            Date            Reason
+//Reginald         2023/07/30      Added reflection for workshop9
+/////////////////////////////////////////////////////////////////
+I have done all the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments.
+////////////////////////////////////////////////////////////////////////
+
+For this workshop I got to learn more about inheritance and how virtual functions work. In this workshop I also learned that you would need to call the copy constructor and copy assignment operator of the base class to ensure all the information is being copied. For this workshop, I had two big issues. One of them I was able to fix and the other I had to adjust the code to make it work. I have not been able to find a proper fix for it. One of the issues I had was that the program was not reading the text file. After some debugging, I realized that the read function was not called. I had to call it which is what I did in the constructor. The other issue I had was the write function in the HTML file. I did not have access to the m_content attribute of the text class but I had to loop through the content to display the content to the screen. I used the overloaded index operator function to loop through the content. However, since it created many issues about it not being modifiable, I changed the function call to not include a const. Later, after trying more tests on it I noticed the while loop should check the index of the current object instead of ch. const char& ch = (*this)[i]; I was able to code it so it can still return a const.
+
+This week I also completed milestone 3 and 4. Both were about creating a publication class and a book class to display the shelfid, membershipid, book name, year, and author name. Milestone 3 was about focusing on virtuality especially interface and pure virtual functions which is the case for the Streamable class. We then create a derived class from Streamable which is Publication and create a derived class Book from Publication. In both milestone 3 and 4 the biggest challenge I had was reading the file. The getline function and get function. For milestone 4, when I had to read the authorname from text file, I had to use the get function. The reason why is the get function reads the line but does not discard the newline character. I initially used the getline function assuming the newline character had to be discarded. In this case it did not have to be. The milestone and workshops are not only giving me a better understanding of inheritance, polymorphism and virtuality but it also gives me a good understanding of how to read text from a file and user and the different ways to do it. 
